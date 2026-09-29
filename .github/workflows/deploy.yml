@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - v5
+  repository_dispatch:
+    types: [content-updated] # sent by the private content repo on every push
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -21,6 +24,13 @@ jobs:
       - uses: actions/checkout@v6
         with:
           fetch-depth: 0 # Fetch all history for git info
+      - name: Check out content from the private repo
+        uses: actions/checkout@v6
+        with:
+          repository: yoonzy-tech/just-some-dev-blogs-content
+          token: ${{ secrets.CONTENT_TOKEN }}
+          path: content
+          fetch-depth: 0
       - uses: actions/setup-node@v6
         with:
           node-version: 24
