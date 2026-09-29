@@ -1,6 +1,6 @@
 ---
-title: "<% tp.file.title %>"
-date: <% tp.date.now("YYYY-MM-DD") %>
+title: "{{title}}"
+date: {{date:YYYY-MM-DD}}
 description: ""
 tags:
   - 
