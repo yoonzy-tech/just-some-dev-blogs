@@ -1,6 +1,8 @@
 ---
-title: Welcome to Quartz
+title: Just Some Dev Blogs
 ---
 
-This is a blank Quartz installation.
-See the [documentation](https://quartz.jzhao.xyz) for how to get started.
+Welcome! This is where I write down things I learn as a developer.
+
+- [[Introduction]]: start here
+- [[Readme]]: what this site is about
