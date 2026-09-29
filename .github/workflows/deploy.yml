@@ -27,7 +27,7 @@ jobs:
       - name: Check out content from the private repo
         uses: actions/checkout@v6
         with:
-          repository: yoonzy-tech/just-some-dev-blogs-content
+          repository: yoonzy-tech/quartz-content
           token: ${{ secrets.CONTENT_TOKEN }}
           path: content
           fetch-depth: 0
