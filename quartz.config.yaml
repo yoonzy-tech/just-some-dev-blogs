@@ -258,7 +258,7 @@ plugins:
   - source: "@quartz-themes/core"
     enabled: true
     options:
-      theme: catppuccin
+      theme: border
       mode: both
 layout:
   groups:
