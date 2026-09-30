@@ -1,13 +1,13 @@
 # yaml-language-server: $schema=./quartz/plugins/quartz-plugins.schema.json
 configuration:
-  pageTitle: Just Some Dev Blogs
+  pageTitle: "Ruby's Openbook"
   pageTitleSuffix: ""
   enableSPA: true
   enablePopovers: true
   analytics:
     provider: plausible
   locale: en-US
-  baseUrl: yoonzy-tech.github.io/just-some-dev-blogs
+  baseUrl: yoonzy-tech.github.io/openbook
   ignorePatterns:
     - private
     - templates
@@ -220,7 +220,7 @@ plugins:
     enabled: true
     options:
       links:
-        GitHub: https://github.com/yoonzy-tech/just-some-dev-blogs
+        GitHub: https://github.com/yoonzy-tech/openbook
     layout:
       position: footer
       priority: 50
@@ -255,6 +255,11 @@ plugins:
       position: beforeBody
       priority: 15
       display: all
+  - source: "@quartz-themes/core"
+    enabled: true
+    options:
+      theme: catppuccin
+      mode: both
 layout:
   groups:
     toolbar:

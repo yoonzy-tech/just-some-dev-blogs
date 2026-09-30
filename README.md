@@ -1,8 +1,8 @@
-# Just Some Dev Blogs
+# Ruby's Openbook
 
 My personal dev blog and notes, built with [Quartz 5](https://quartz.jzhao.xyz/) and published on GitHub Pages.
 
-🌐 **https://yoonzy-tech.github.io/just-some-dev-blogs/**
+🌐 **https://yoonzy-tech.github.io/openbook/**
 
 ## How this repo is set up
 
@@ -10,7 +10,7 @@ The site code and the writing live in two separate repos, so work in progress ne
 
 | Repo | Contains | Visibility |
 |---|---|---|
-| **yoonzy-tech/just-some-dev-blogs** (this one) | Quartz, site settings (`quartz.config.yaml`), deploy workflow | Public |
+| **yoonzy-tech/openbook** (this one) | Quartz, site settings (`quartz.config.yaml`), deploy workflow | Public |
 | **yoonzy-tech/quartz-content** | Everything in `content/`: posts, notes, images, templates, Obsidian settings | Private |
 
 `content/` is gitignored here. Locally, it's a separate clone of the private repo, and it doubles as an Obsidian vault.
@@ -18,7 +18,7 @@ The site code and the writing live in two separate repos, so work in progress ne
 ### How publishing works
 
 ```
-Obsidian (content/) ──push──▶ quartz-content ──"content-updated" dispatch──▶ just-some-dev-blogs
+Obsidian (content/) ──push──▶ quartz-content ──"content-updated" dispatch──▶ openbook
                                                                                    │
                                      checks out quartz-content into content/, builds, deploys to Pages
 ```
@@ -32,8 +32,8 @@ Obsidian (content/) ──push──▶ quartz-content ──"content-updated" d
 Requirements: Node 22 or later, and Git.
 
 ```bash
-git clone https://github.com/yoonzy-tech/just-some-dev-blogs.git
-cd just-some-dev-blogs
+git clone https://github.com/yoonzy-tech/openbook.git
+cd openbook
 git clone https://github.com/yoonzy-tech/quartz-content.git content
 npm ci
 npx quartz build --serve   # preview at http://localhost:8080
@@ -47,7 +47,7 @@ This is already done, but here it is in case it ever needs redoing, for example 
 
 1. **Pages:** in this repo, go to Settings → Pages and set Source to **GitHub Actions**. Under Settings → Environments → `github-pages`, allow the `v5` branch.
 2. **Access token:** create a [fine-grained personal access token](https://github.com/settings/personal-access-tokens) with:
-   - Repository access: `just-some-dev-blogs` and `quartz-content`
+   - Repository access: `openbook` and `quartz-content`
    - Permissions: **Contents: Read and write**
 3. **Secrets:** add the token as an Actions secret named **`CONTENT_TOKEN`** in **both** repos (Settings → Secrets and variables → Actions → Repository secrets).
    - This repo uses it to check out the private content during the build.
